@@ -1,0 +1,15 @@
+Sub OpenSAP()
+'Substitute the URL of SAP
+Shell "C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe", 4
+Set WshShell = CreateObject("WScript.Shell")
+Do Until WshShell.AppActivate("SAP Logon ")
+    Application.Wait Now + TimeValue("0:00:01")
+Loop
+'Abrir PE1
+Set SapGui = GetObject("SAPGUI")
+Set Appl = SapGui.GetScriptingEngine
+
+'Substitute the connection from SAP to open it directly
+Set Connection = Appl.Openconnection("FOLDER", True)
+Set session = Connection.Children(0)
+End Sub
