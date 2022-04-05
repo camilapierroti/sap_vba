@@ -1,0 +1,7 @@
+'Close multiple Excel files that are already open, without closing them all 
+
+Sub closeExcel()
+Workbooks("FILE1.XLSX").Close SaveChanges:=False
+Workbooks("FILE2.XLSX").Close SaveChanges:=False
+Workbooks("FILE3.XLSX").Close SaveChanges:=False
+End Sub
