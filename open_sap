@@ -5,7 +5,7 @@ Set WshShell = CreateObject("WScript.Shell")
 Do Until WshShell.AppActivate("SAP Logon ")
     Application.Wait Now + TimeValue("0:00:01")
 Loop
-'Abrir PE1
+
 Set SapGui = GetObject("SAPGUI")
 Set Appl = SapGui.GetScriptingEngine
 
